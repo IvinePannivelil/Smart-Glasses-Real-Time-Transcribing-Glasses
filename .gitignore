@@ -30,3 +30,6 @@ builds/*.zip
 Thumbs.db
 [Dd]esktop.ini
 .DS_Store
+
+# Compiled Android builds
+*.apk
