@@ -1,4 +1,4 @@
-﻿// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print
 
 import 'dart:async';
 import 'dart:convert';
@@ -182,9 +182,11 @@ class _DeviceScreenState extends State<DeviceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF121212),
-      appBar: AppBar(
+    return ScaffoldMessenger(
+      key: Snackbar.snackBarKeyC,
+      child: Scaffold(
+        backgroundColor: const Color(0xFF121212),
+        appBar: AppBar(
         backgroundColor: const Color(0xFF1E1E1E),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -350,6 +352,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
           ),
         ),
       ),
-    );
+      ), // Scaffold
+    ); // ScaffoldMessenger
   }
 }

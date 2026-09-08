@@ -1,4 +1,4 @@
-# 👓 Smart Glasses / Listening Aid Project
+# 👓 Smart Glasses — Real-Time Transcribing Glasses
 
 A real-time assistive hearing HUD for spectacles. The Flutter mobile app captures live ambient audio, transcribes speech-to-text in real time, and streams the live subtitles over Bluetooth Low Energy (BLE) to an ESP32 microcontroller mounted on glasses frames with an OLED micro-display.
 
@@ -14,7 +14,7 @@ SmartGlasses_ListeningAid/
 │   └── app/src/main/
 │       └── AndroidManifest.xml # BLE + Audio permissions & Android 11+ STT queries
 ├── builds/                    # Prebuilt binaries
-│   └── listening_aid.apk      # Ready-to-install Android APK
+│   └── listening_aid.apk      # Build locally: `flutter build apk` (excluded from git)
 ├── firmware/                  # Microcontroller source code
 │   └── SmartGlasses_ESP32.ino # Arduino/C++ ESP32 BLE + OLED SSD1306 driver
 └── lib/                       # Flutter App Source Code
@@ -59,8 +59,41 @@ SmartGlasses_ListeningAid/
 ## 🚀 How to Run
 
 1. **ESP32 Firmware**: Open `firmware/SmartGlasses_ESP32.ino` in Arduino IDE or VSCode PlatformIO. Install `Adafruit SSD1306` and `Adafruit GFX Library`, then flash to your ESP32.
-2. **Flutter App**: Run `flutter pub get` and `flutter run` on an Android device (or install `builds/listening_aid.apk`).
+2. **Flutter App**: Run `flutter pub get` then `flutter run` on an Android device. To build a standalone APK, run `flutter build apk` — the output will be in `build/app/outputs/flutter-apk/`.
 3. **Usage**:
    - Turn on Bluetooth on your phone.
    - Scan and tap **ESP32 OLED Display**.
    - Tap the microphone button on the screen and speak; live subtitles will appear directly on the OLED mounted to your spectacles.
+
+---
+
+## 📸 App Screenshots
+
+| Bluetooth Off | Scanning for Devices | Device Connected |
+| :---: | :---: | :---: |
+| ![Bluetooth Off](docs/screenshots/bs.jpg) | ![Scanning](docs/screenshots/scaning.jpg) | ![Connected](docs/screenshots/device%20connected.jpg) |
+
+| Waiting for Input | Listening (Mic Active) | Live Transcription |
+| :---: | :---: | :---: |
+| ![Waiting](docs/screenshots/waiting%20for%20tr.jpg) | ![Listening](docs/screenshots/starttranscription.jpg) | ![Transcription](docs/screenshots/transcription.jpg) |
+
+---
+
+## 🔧 Hardware Build
+
+### Circuit Diagram
+![Circuit Diagram](docs/hardware/CIRCUIT%20DIAGRAM%20(3).png)
+
+### Prototype & Design Sketch
+| Physical Prototype (Early Build) | Design Sketch with Dimensions |
+| :---: | :---: |
+| ![Glasses with HUD](docs/hardware/transcribeglass%20(2).png) | ![Design Sketch](docs/hardware/IMG-20250205-WA0121.jpg) |
+
+### Final Build — OLED HUD in Action
+| OLED displaying "hello hello" on ESP32 | Full enclosure with OLED lit | Glasses HUD view |
+| :---: | :---: | :---: |
+| ![OLED Demo](docs/hardware/display.jpg) | ![Final Build](docs/hardware/finalres2.jpg) | ![Glasses HUD](docs/hardware/WhatsApp%20Image%202025-03-19%20at%2011.47.11_aebcdcd8.jpg) |
+
+| Final Device on desk |
+| :---: |
+| ![Final Result](docs/hardware/finalres4.jpg) |

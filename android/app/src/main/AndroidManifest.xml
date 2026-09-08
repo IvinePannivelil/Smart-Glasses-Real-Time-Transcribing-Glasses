@@ -1,4 +1,4 @@
-﻿<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Bluetooth LE Hardware Feature -->
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="Smart Glasses Listening Aid"
+        android:label="Smart Glasses - Real-Time Transcribing Glasses"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
