@@ -6,33 +6,34 @@ A real-time assistive hearing HUD for spectacles. The Flutter mobile app capture
 
 ## 📁 Project Structure
 
+```
 SmartGlasses_ListeningAid/
-├── pubspec.yaml # Flutter project configuration & dependencies
-├── README.md # Project overview & wiring diagram
-├── android/ # Android native configuration
-│ └── app/src/main/
-│ └── AndroidManifest.xml # BLE + Audio permissions & Android 11+ STT queries
-├── builds/ # Prebuilt binaries
-│ └── listening_aid.apk # Build locally: flutter build apk (excluded from git)
-├── firmware/ # Microcontroller source code
-│ └── SmartGlasses_ESP32.ino # Arduino/C++ ESP32 BLE + OLED SSD1306 driver
-└── lib/ # Flutter App Source Code
-├── main.dart # Entrypoint & BLE state observer
-├── screens/
-│ ├── bluetooth_off_screen.dart # Prompt to enable Bluetooth
-│ ├── scan_screen.dart # Device discovery list
-│ └── device_screen.dart # Real-time Speech-to-Text & BLE transmitter
-├── widgets/
-│ ├── characteristic_tile.dart
-│ ├── descriptor_tile.dart
-│ ├── scan_result_tile.dart
-│ ├── service_tile.dart
-│ └── system_device_tile.dart
-└── utils/
-├── extra.dart # BLE extensions & stream helpers
-├── snackbar.dart # Feedback snackbar alerts
-└── utils.dart # Re-emitting stream transformers
-
+├── pubspec.yaml               # Flutter project configuration & dependencies
+├── README.md                  # Project overview & wiring diagram
+├── android/                   # Android native configuration
+│   └── app/src/main/
+│       └── AndroidManifest.xml # BLE + Audio permissions & Android 11+ STT queries
+├── builds/                    # Prebuilt binaries
+│   └── listening_aid.apk      # Build locally: `flutter build apk` (excluded from git)
+├── firmware/                  # Microcontroller source code
+│   └── SmartGlasses_ESP32.ino # Arduino/C++ ESP32 BLE + OLED SSD1306 driver
+└── lib/                       # Flutter App Source Code
+    ├── main.dart              # Entrypoint & BLE state observer
+    ├── screens/
+    │   ├── bluetooth_off_screen.dart # Prompt to enable Bluetooth
+    │   ├── scan_screen.dart          # Device discovery list
+    │   └── device_screen.dart        # Real-time Speech-to-Text & BLE transmitter
+    ├── widgets/
+    │   ├── characteristic_tile.dart
+    │   ├── descriptor_tile.dart
+    │   ├── scan_result_tile.dart
+    │   ├── service_tile.dart
+    │   └── system_device_tile.dart
+    └── utils/
+        ├── extra.dart         # BLE extensions & stream helpers
+        ├── snackbar.dart      # Feedback snackbar alerts
+        └── utils.dart         # Re-emitting stream transformers
+```
 
 ---
 
